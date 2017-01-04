@@ -1,0 +1,25 @@
+{
+  "name": "file-morgan",
+  "version": "1.0.0",
+  "description": "Use morgan to save logs to the file system in production mode",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "file",
+    "filesystem",
+    "morgan",
+    "express",
+    "log",
+    "logger",
+    "httplogger",
+    "http"
+  ],
+  "author": "Peter Rietveld",
+  "license": "MIT",
+  "dependencies": {
+    "file-stream-rotator": "0.0.7",
+    "morgan": "^1.7.0"
+  }
+}
