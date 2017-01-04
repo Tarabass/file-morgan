@@ -3,6 +3,14 @@
   "version": "1.0.0",
   "description": "Use morgan to save logs to the file system in production mode",
   "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Tarabass/file-morgan.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Tarabass/file-morgan/issues"
+  },
+  "homepage": "https://github.com/Tarabass/file-morgan",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -21,5 +29,12 @@
   "dependencies": {
     "file-stream-rotator": "0.0.7",
     "morgan": "^1.7.0"
-  }
+  },
+  "files": [
+    "LICENSE",
+    "HISTORY.md",
+    "index.js",
+    "README.md",
+    ".gitignore"
+  ]
 }
