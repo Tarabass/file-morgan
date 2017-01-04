@@ -33,11 +33,11 @@ var morgan = require('morgan')
 var fileStreamRotator = require('file-stream-rotator')
 
 /**
- * Default log file.
+ * Default log filename.
  * @private
  */
 
-var DEFAULT_LOG_FILE = 'access.log'
+var DEFAULT_LOG_FILENAME = 'access.log'
 
 /**
  * Default log directory.
@@ -81,7 +81,7 @@ function fileMorgan(format, options) {
 		forceProductionMode = opts.forceProductionMode !== 'undefined' ? opts.forceProductionMode : FORCE_PRODUCTION_MODE,
 		useStreamRotator = opts.useStreamRotator !== 'undefined' ? opts.useStreamRotator : USE_STREAM_ROTATOR,
 		dateFormat = opts.dateFormat || DATE_FORMAT,
-		fileName = opts.file || DEFAULT_LOG_FILE,
+		fileName = opts.fileName || DEFAULT_LOG_FILENAME,
 		directory = path.resolve(opts.directory || DEFAULT_LOG_DIRECTORY),
 		filePath = path.join(directory, fileName),
 		env = process.env.NODE_ENV || 'development',
