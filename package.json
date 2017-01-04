@@ -10,7 +10,7 @@
   "bugs": {
     "url": "https://github.com/Tarabass/file-morgan/issues"
   },
-  "homepage": "https://github.com/Tarabass/file-morgan",
+  "homepage": "https://tarabass.github.io/file-morgan/",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
