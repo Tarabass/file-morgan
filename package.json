@@ -12,6 +12,7 @@
   },
   "homepage": "https://tarabass.github.io/file-morgan/",
   "scripts": {
+    "eslint": "eslint .",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [
@@ -26,15 +27,17 @@
   ],
   "author": "Peter Rietveld",
   "license": "MIT",
-  "dependencies": {
-    "file-stream-rotator": "0.0.7",
-    "morgan": "^1.7.0"
-  },
   "files": [
     "LICENSE",
     "HISTORY.md",
     "index.js",
-    "README.md",
-    ".gitignore"
-  ]
+    "README.md"
+  ],
+  "dependencies": {
+    "file-stream-rotator": "0.0.7",
+    "morgan": "^1.7.0"
+  },
+  "devDependencies": {
+    "eslint": "^3.12.2"
+  }
 }

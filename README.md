@@ -1,8 +1,8 @@
 file-morgan
 ============
-<!--- [![NPM Version][npm-image]][npm-url]
+[![NPM Version][npm-image]][npm-url]
 [![NPM Downloads][downloads-image]][downloads-url]
-[![Build Status][travis-image]][travis-url] -->
+<!--- [![Build Status][travis-image]][travis-url] -->
 
 This is build upon [morgan](https://github.com/expressjs/morgan) module and saves logs to the file system
 
@@ -72,6 +72,9 @@ fileMorgan('common', {
 ```
 
 ## To Do
+- [X] Add eslint
+- [ ] Replace Object.assign with object-assign module
+- [X] Add GitHub information to package.json
 - [ ] Add tests
 - [ ] Add npm information
 - [ ] Finish README.
@@ -79,11 +82,9 @@ fileMorgan('common', {
 ## License
 [MIT](LICENSE)
 
-<!---
-[npm-image]: https://img.shields.io/npm/v/mongo-morgan.svg?style=flat
-[npm-url]: https://npmjs.org/package/mongo-morgan
-[travis-image]: https://img.shields.io/travis/emech-en/mongo-morgan.svg?style=flat
-[travis-url]: https://travis-ci.org/emech-en/mongo-morgan
-[downloads-image]: https://img.shields.io/npm/dm/mongo-morgan.svg?style=flat
-[downloads-url]: https://npmjs.org/package/mongo-morgan
--->
+[npm-image]: https://img.shields.io/npm/v/file-morgan.svg
+[npm-url]: https://npmjs.org/package/file-morgan
+[downloads-image]: https://img.shields.io/npm/dm/file-morgan.svg
+[downloads-url]: https://npmjs.org/package/file-morgan
+<!---[travis-image]: https://img.shields.io/travis/emech-en/mongo-morgan.svg?style=flat
+[travis-url]: https://travis-ci.org/emech-en/mongo-morgan-->
