@@ -35,7 +35,8 @@
   ],
   "dependencies": {
     "file-stream-rotator": "0.0.7",
-    "morgan": "^1.7.0"
+    "morgan": "^1.7.0",
+    "object-assign": "^4.1.0"
   },
   "devDependencies": {
     "eslint": "^3.12.2"

@@ -2,7 +2,6 @@ file-morgan
 ============
 [![NPM Version][npm-image]][npm-url]
 [![NPM Downloads][downloads-image]][downloads-url]
-<!--- [![Build Status][travis-image]][travis-url] -->
 
 This is build upon [morgan](https://github.com/expressjs/morgan) module and saves logs to the file system
 
@@ -73,11 +72,12 @@ fileMorgan('common', {
 
 ## To Do
 - [X] Add eslint
-- [ ] Replace Object.assign with object-assign module
+- [X] Replace Object.assign with object-assign module
 - [X] Add GitHub information to package.json
 - [ ] Add tests
 - [ ] Add npm information
 - [ ] Finish README.
+- [ ] Add travis
 
 ## License
 [MIT](LICENSE)
@@ -86,5 +86,3 @@ fileMorgan('common', {
 [npm-url]: https://npmjs.org/package/file-morgan
 [downloads-image]: https://img.shields.io/npm/dm/file-morgan.svg
 [downloads-url]: https://npmjs.org/package/file-morgan
-<!---[travis-image]: https://img.shields.io/travis/emech-en/mongo-morgan.svg?style=flat
-[travis-url]: https://travis-ci.org/emech-en/mongo-morgan-->

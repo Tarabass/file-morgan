@@ -31,6 +31,7 @@ var fs = require('fs')
 var path = require('path')
 var morgan = require('morgan')
 var fileStreamRotator = require('file-stream-rotator')
+var objectAssign = require('object-assign')
 
 /**
  * Default log filename.
@@ -117,7 +118,7 @@ function fileMorgan(format, options) {
 			}
 
 			// Merge options
-			opts = Object.assign(opts, { skip: skip, stream: stream })
+			opts = objectAssign(opts, { skip: skip, stream: stream })
 
 			return morgan(format, opts)
 		}
