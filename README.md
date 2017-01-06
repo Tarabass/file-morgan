@@ -75,6 +75,7 @@ fileMorgan('common', {
 - [X] Replace Object.assign with object-assign module
 - [X] Add GitHub information to package.json
 - [ ] Add tests
+- [ ] Fire event when log file is changed
 - [X] Add npm information
 - [ ] Finish README.
 - [ ] Add travis
