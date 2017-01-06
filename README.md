@@ -86,7 +86,7 @@ fileMorgan('common', {
 - [X] Add GitHub information to package.json
 - [X] Add tests
 - [ ] Improve tests for default options
-- [X] Fire event when log file is changed
+- [ ] Fire event when log file is changed
 - [X] Add npm information
 - [ ] Finish README.
 - [X] Add travis
