@@ -1,5 +1,9 @@
 unreleased
-==================
+==========
+  * deps: chokidar@1.6.1
+    * Watch files
+  * deps: events@1.1.1
+    * Have possibility to emit custom events
   * deps: object-assign@4.1.0
     * Make module compatible with older v8 versions
 
