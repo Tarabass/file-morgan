@@ -6,11 +6,12 @@ unreleased
     * Have possibility to emit custom events
   * deps: object-assign@4.1.0
     * Make module compatible with older v8 versions
+  * Added travis support
 
 1.0.3 / 2015-01-05
 ==================
   * deps: eslint@3.12.2
-    * add eslint support
+    * Add eslint support
 
 1.0.2 / 2015-01-04
 ==================
