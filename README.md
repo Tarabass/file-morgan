@@ -78,7 +78,7 @@ fileMorgan('common', {
 - [ ] Add tests
 - [X] Add npm information
 - [ ] Finish README.
-- [X] Add travis
+- [ ] Add travis
 
 ## License
 [MIT](LICENSE)
@@ -87,5 +87,5 @@ fileMorgan('common', {
 [npm-url]: https://npmjs.org/package/file-morgan
 [downloads-image]: https://img.shields.io/npm/dm/file-morgan.svg
 [downloads-url]: https://npmjs.org/package/file-morgan
-[travis-image]: https://img.shields.io/travis/tarabass/file-morgan.svg
-[travis-url]: https://travis-ci.org/tarabass/file-morgan
+[travis-image]: https://img.shields.io/travis/Tarabass/file-morgan.svg
+[travis-url]: https://travis-ci.org/Tarabass/file-morgan
