@@ -87,7 +87,7 @@ fileMorgan('common', {
 - [X] Fire event when log file is changed
 - [X] Add npm information
 - [ ] Finish README.
-- [ ] Add travis
+- [X] Add travis
 
 ## License
 [MIT](LICENSE)
