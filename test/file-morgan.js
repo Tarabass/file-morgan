@@ -20,7 +20,7 @@ describe('file-morgan()', function() {
 				}
 
 				// Check if log file exists
-				fs.access(path.join('logs', 'access.log'), fs.constants.F_OK, function(err) {
+				fs.access(path.join('logs', 'access.log'), function(err) {
 					if(err) {
 						return done(err)
 					}
