@@ -13,7 +13,7 @@
   "homepage": "https://tarabass.github.io/file-morgan/",
   "scripts": {
     "eslint": "eslint .",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "mocha --check-leaks --reporter spec --bail"
   },
   "keywords": [
     "file",
@@ -39,6 +39,9 @@
     "object-assign": "^4.1.0"
   },
   "devDependencies": {
-    "eslint": "^3.12.2"
+    "eslint": "^3.12.2",
+    "fs-extra": "^1.0.0",
+    "mocha": "^3.2.0",
+    "supertest": "^2.0.1"
   }
 }

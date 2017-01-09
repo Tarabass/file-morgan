@@ -78,7 +78,7 @@ fileMorgan('common', {
 - [ ] Add tests
 - [X] Add npm information
 - [ ] Finish README.
-- [ ] Add travis
+- [X] Add travis
 
 ## License
 [MIT](LICENSE)
