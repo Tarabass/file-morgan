@@ -14,9 +14,10 @@ var fileMorgan = require('file-morgan')
 
 ### fileMorgan(format, options)
 
-Create a new file-morgan logger middleware function using the given `format` and `options`.
-The `format` (same as [morgan](https://github.com/expressjs/morgan) module) argument may be a string of a predefined name (see below for the names) or
-a string of a format string.
+Create a new file-morgan logger middleware function using the given `format` and `options`. The `format` (same as
+[morgan](https://github.com/expressjs/morgan) module) argument may be a string of a predefined name (see
+[norgan predefined name](https://github.com/expressjs/morgan#predefined-formats)) or a string of compiled format string (see
+[morgan compile function](https://github.com/expressjs/morgan#morgancompileformat)).
 
 ```js
 // BASIC EXAMPLE: save logs to a file named `access.log` placed in the `logs` directory
@@ -75,7 +76,8 @@ fileMorgan('common', {
 - [X] Add eslint
 - [X] Replace Object.assign with object-assign module
 - [X] Add GitHub information to package.json
-- [ ] Add tests
+- [X] Add tests
+- [ ] Improve tests for default options
 - [X] Add npm information
 - [ ] Finish README.
 - [X] Add travis
