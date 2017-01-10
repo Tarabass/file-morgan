@@ -1,8 +1,12 @@
+<!---
 unreleased
 ==================
+-->
+1.0.4
   * deps: object-assign@4.1.0
     * Make module compatible with older v8 versions
   * Added travis support
+  * Wrote tests for arguments
 
 1.0.3 / 2015-01-05
 ==================
