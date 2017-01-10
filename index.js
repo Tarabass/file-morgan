@@ -116,7 +116,11 @@ function fileMorgan(format, options) {
 		skip,
 		stream
 
-	if(typeof dateFormat !== 'string') {
+	if(typeof format !== 'string') {
+		throw new TypeError('argument format must be a string')
+	}
+
+	if(useStreamRotator && typeof dateFormat !== 'string') {
 		throw new TypeError('option dateFormat must be a string')
 	}
 

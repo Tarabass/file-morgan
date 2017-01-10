@@ -9,37 +9,51 @@ var fs = require('fs-extra')
 
 describe('file-morgan()', function() {
 	afterEach(function() {
-		// TODO: clean files and log directory after every test
+		// Remove log directory and all files in it
+		fs.remove(path.resolve('logs'), function (err) {
+			if(err) {
+				if (err.code === "ENOENT") {
+					return
+				} else {
+					throw err
+				}
+			}
+		})
 	})
 
 	describe('arguments', function() {
-		it('should use default format', function(done) {
-			var cb = after(1, function(err, res, line) {
-				if(err) {
-					return done(err)
-				}
+		describe('format', function() {
+			it('should be required', function () {
+				assert.throws(fileMorgan, /format must be a string/)
+			})
 
-				// Check if log file exists
-				fs.access(path.join('logs', 'access.log'), function(err) {
+			it('should reject format as function', function () {
+				assert.throws(fileMorgan.bind(fileMorgan, {}), /format must be a string/)
+			})
+
+			it('should use default format', function(done) {
+				var cb = after(1, function(err, res, line) {
 					if(err) {
 						return done(err)
 					}
 
-					// Remove log directory and all files in it
-					fs.remove(path.resolve('logs'), function (err) {
-						if(err) {
-							return done(err)
-						}
-					});
+					done()
 				})
 
-				done()
+				// https://www.npmjs.com/package/supertest
+				request(createServer('default', { skip: false, forceProductionMode: true }))
+					.get('/')
+					.expect(200, cb)
 			})
+		})
 
-			// https://www.npmjs.com/package/supertest
-			request(createServer('common', { skip: false, forceProductionMode: true }))
-				.get('/')
-				.expect(200, cb)
+		describe('options.dateFormat', function() {
+			it('should be a string', function () {
+				assert.throws(fileMorgan.bind(fileMorgan, 'common', {
+					useStreamRotator: true,
+					dateFormat: new Date()
+				}), /dateFormat must be a string/)
+			})
 		})
 	})
 })
