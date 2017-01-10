@@ -1,8 +1,13 @@
-<!---
 unreleased
+==========
+  * deps: chokidar@1.6.1
+    * Watch files
+  * deps: events@1.1.1
+    * Have possibility to emit custom events
 ==================
--->
-1.0.4
+
+1.0.4 / 2015-01-10
+=======
   * deps: object-assign@4.1.0
     * Make module compatible with older v8 versions
   * Added travis support

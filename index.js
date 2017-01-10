@@ -12,6 +12,7 @@
  */
 
 module.exports = fileMorgan
+module.exports.on = module.exports.addListener = addListener
 module.exports.compile = function(format) {
 	return morgan.compile(format)
 }
@@ -32,6 +33,8 @@ var path = require('path')
 var morgan = require('morgan')
 var fileStreamRotator = require('file-stream-rotator')
 var objectAssign = require('object-assign')
+var chokidar = require('chokidar')
+var events = require('events')
 
 /**
  * Default log filename.
@@ -48,11 +51,18 @@ var DEFAULT_LOG_FILENAME = 'access.log'
 var DEFAULT_LOG_DIRECTORY = 'logs'
 
 /**
- * Force production mode used for testing
+ * Force production mode used for testing.
  * @private
  */
 
 var FORCE_PRODUCTION_MODE = false
+
+/**
+ * Watch files for changes.
+ * @private
+ */
+
+var WATCH_FILES = false
 
 /**
  * Use stream rotator.
@@ -62,14 +72,30 @@ var FORCE_PRODUCTION_MODE = false
 var USE_STREAM_ROTATOR = false
 
 /**
- * Date format used with file stream rotator
+ * Date format used with file stream rotator.
  * @private
  */
 
 var DATE_FORMAT = ('YYYYMMDD')
 
 /**
- * Create a logger middleware
+ * Placeholder for EventEmitter.
+ * @private
+ */
+
+var EVENT_EMITTER = new events.EventEmitter()
+
+/**
+ * Array of possible events.
+ * @private
+ */
+
+var SUPPORTED_EVENTS = [
+	'change'
+]
+
+/**
+ * Create a logger middleware.
  *
  * @public
  * @param {String|Function} format
@@ -80,6 +106,7 @@ var DATE_FORMAT = ('YYYYMMDD')
 function fileMorgan(format, options) {
 	var opts = options || {},
 		forceProductionMode = opts.forceProductionMode !== 'undefined' ? opts.forceProductionMode : FORCE_PRODUCTION_MODE,
+		watchFiles = opts.watchFiles !== 'undefined' ? opts.watchFiles : WATCH_FILES,
 		useStreamRotator = opts.useStreamRotator !== 'undefined' ? opts.useStreamRotator : USE_STREAM_ROTATOR,
 		dateFormat = opts.dateFormat || DATE_FORMAT,
 		fileName = opts.fileName || DEFAULT_LOG_FILENAME,
@@ -108,10 +135,12 @@ function fileMorgan(format, options) {
 				}
 
 			if(useStreamRotator) {
+				filePath = formatFileName(filePath, '%DATE%')
+
 				// Create a rotating write stream
 				stream = fileStreamRotator.getStream({
 					date_format: dateFormat,
-					filename: formatFileName(filePath, '%DATE%'),
+					filename: filePath,
 					frequency: 'daily',
 					verbose: false
 				})
@@ -119,6 +148,11 @@ function fileMorgan(format, options) {
 			else {
 				// Create a write stream (in append mode)
 				stream = fs.createWriteStream(filePath, { flags: 'a' })
+			}
+
+			// Create file watcher
+			if(watchFiles) {
+				addFileWatcher(useStreamRotator ? directory : filePath)
 			}
 
 			// Merge options
@@ -152,4 +186,45 @@ function formatFileName(filePath, dateFormat) {
 		fileName = name + '-' + dateFormat + ext
 
 	return path.join(dir, fileName)
+}
+
+/**
+ * Create file watcher.
+ *
+ * @private
+ * @param {String} file or directory
+ */
+
+function addFileWatcher(path) {
+	var watcher = chokidar.watch(path, {
+		alwaysStat: true
+	});
+
+	watcher.on('change', function(path, stats) {
+		if (stats) {
+			EVENT_EMITTER.emit('change', path, stats)
+		}
+	})
+}
+
+/**
+ * Wrapper for EventEmitter.on function.
+ *
+ * @public
+ * @param {String} type
+ * @param {Function} listener
+ */
+
+function addListener(event, listener){
+	if(SUPPORTED_EVENTS.indexOf(event) !== -1) {
+		try {
+			EVENT_EMITTER.on(event, listener)
+		}
+		catch(err) {
+			throw err
+		}
+	}
+	else {
+		throw new Error('Unsupported event.')
+	}
 }

@@ -45,6 +45,10 @@ The option `stream` is removed/overwriten.
 
 Used for developers to force logging when your application is not running in production mode. Default is `false`
 
+##### watchFiles
+
+For performance watching files is optional. When watching files on changes an `change event` is emitted. Default is `false`
+
 ##### useStreamRotator
 
 When set to true a new log file will be created on daily basis. The format of the file is `filename-date.log`, where the filename is default `access` 
@@ -72,12 +76,17 @@ fileMorgan('common', {
 })
 ```
 
+#### Events
+
+##### ToDo
+
 ## To Do
 - [X] Add eslint
 - [X] Replace Object.assign with object-assign module
 - [X] Add GitHub information to package.json
 - [X] Add tests
 - [ ] Improve tests for default options
+- [X] Fire event when log file is changed
 - [X] Add npm information
 - [ ] Finish README.
 - [X] Add travis
