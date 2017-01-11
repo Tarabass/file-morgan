@@ -1,10 +1,10 @@
 file-morgan
 ============
 
-[![Join the chat at https://gitter.im/file-morgan/Lobby](https://badges.gitter.im/file-morgan/Lobby.svg)](https://gitter.im/file-morgan/Lobby?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 [![NPM Version][npm-image]][npm-url]
 [![NPM Downloads][downloads-image]][downloads-url]
 [![Build Status][travis-image]][travis-url]
+[![Join the chat at https://gitter.im/file-morgan/Lobby][gitter-image]][gitter-url]
 
 This is build upon [morgan](https://github.com/expressjs/morgan) module and saves logs to the file system
 
@@ -18,7 +18,7 @@ var fileMorgan = require('file-morgan')
 
 Create a new file-morgan logger middleware function using the given `format` and `options`. The `format` (same as
 [morgan](https://github.com/expressjs/morgan) module) argument may be a string of a predefined name (see
-[norgan predefined name](https://github.com/expressjs/morgan#predefined-formats)) or a string of compiled format string (see
+[morgan predefined name](https://github.com/expressjs/morgan#predefined-formats)) or a string of compiled format string (see
 [morgan compile function](https://github.com/expressjs/morgan#morgancompileformat)).
 
 ```js
@@ -80,13 +80,37 @@ fileMorgan('common', {
 
 #### Events
 
-##### ToDo
+For now file-morgan emits one event called `change`, as defined in `SUPPORTED_EVENTS`. To listen to events call `on(eventName, listener)` or `addListener(eventName, listener)`
+
+##### change
+
+The `change` event is emitted when a file has changed in the directory where logs are saved.
+
+#### Methods
+
+To listen to events there are two methods that can be used.
+
+##### addListener(eventName, listener)
+
+Alias for `on(eventName, listener)`.
+
+##### on(eventName, listener)
+
+Adds the listener function for the event named eventName. The listener callback gets two arguments (`path`, `stats`). `path` is the path of the file that has changed, and `stats` are
+the stats (see [](https://nodejs.org/api/fs.html#fs_class_fs_stats)) of the file that has changed.
+
+```js
+fileMorgan.on('change', function(path, stats) {
+	console.log('File ' + path + ' changed size to ' + stats.size)
+})
+```
 
 ## To Do
 - [X] Add eslint
 - [X] Replace Object.assign with object-assign module
 - [X] Add GitHub information to package.json
 - [X] Add tests
+- [ ] Add code coverage
 - [ ] Improve tests for default options
 - [X] Fire event when log file is changed
 - [X] Add npm information
@@ -102,3 +126,5 @@ fileMorgan('common', {
 [downloads-url]: https://npmjs.org/package/file-morgan
 [travis-image]: https://img.shields.io/travis/Tarabass/file-morgan.svg
 [travis-url]: https://travis-ci.org/Tarabass/file-morgan
+[gitter-image]: https://badges.gitter.im/file-morgan/Lobby.svg
+[gitter-url]: https://gitter.im/file-morgan/Lobby?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge
