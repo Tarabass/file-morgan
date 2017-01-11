@@ -1,13 +1,14 @@
 unreleased
-==========
+==================
+  * Added the ability to listen to events
+  * Emit change event when any log file has changed
   * deps: chokidar@1.6.1
     * Watch files
   * deps: events@1.1.1
-    * Have possibility to emit custom events
-==================
+    * Emit events
 
 1.0.4 / 2015-01-10
-=======
+==================
   * deps: object-assign@4.1.0
     * Make module compatible with older v8 versions
   * Added travis support
