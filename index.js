@@ -198,7 +198,7 @@ function formatFileName(filePath, dateFormat) {
 function addFileWatcher(path) {
 	var watcher = chokidar.watch(path, {
 		alwaysStat: true
-	});
+	})
 
 	watcher.on('change', function(path, stats) {
 		if (stats) {
