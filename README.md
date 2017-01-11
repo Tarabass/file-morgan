@@ -97,7 +97,7 @@ Alias for `on(eventName, listener)`.
 ##### on(eventName, listener)
 
 Adds the listener function for the event named eventName. The listener callback gets two arguments (`path`, `stats`). `path` is the path of the file that has changed, and `stats` are
-the stats (see [](https://nodejs.org/api/fs.html#fs_class_fs_stats)) of the file that has changed.
+the stats (see [fs.stats](https://nodejs.org/api/fs.html#fs_class_fs_stats)) of the file that has changed.
 
 ```js
 fileMorgan.on('change', function(path, stats) {
