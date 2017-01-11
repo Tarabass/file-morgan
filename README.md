@@ -1,5 +1,7 @@
 file-morgan
 ============
+
+[![Join the chat at https://gitter.im/file-morgan/Lobby](https://badges.gitter.im/file-morgan/Lobby.svg)](https://gitter.im/file-morgan/Lobby?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 [![NPM Version][npm-image]][npm-url]
 [![NPM Downloads][downloads-image]][downloads-url]
 [![Build Status][travis-image]][travis-url]
