@@ -1,3 +1,5 @@
+'use strict'
+
 process.env.NO_DEPRECATION = 'file-morgan'
 
 var assert = require('assert')
@@ -12,9 +14,7 @@ describe('file-morgan()', function() {
 		// Remove log directory and all files in it
 		fs.remove(path.resolve('logs'), function (err) {
 			if(err) {
-				if (err.code === "ENOENT") {
-					return
-				} else {
+				if (err && err.code !== 'ENOENT') {
 					throw err
 				}
 			}
@@ -32,18 +32,20 @@ describe('file-morgan()', function() {
 			})
 
 			it('should use default format', function(done) {
-				var cb = after(1, function(err, res, line) {
+				var cb = after(1, function(err/*, res, line*/) {
 					if(err) {
 						return done(err)
 					}
 
-					done()
+					return done()
 				})
 
 				// https://www.npmjs.com/package/supertest
-				request(createServer('default', { skip: false, forceProductionMode: true }))
-					.get('/')
-					.expect(200, cb)
+				request(createServer('default', {
+					skip: false, forceProductionMode: true
+				}))
+				.get('/')
+				.expect(200, cb)
 			})
 		})
 
@@ -79,15 +81,15 @@ function createServer(format, opts, fn, fn1) {
 	var logger = fileMorgan(format, opts)
 	var middle = fn || noopMiddleware
 
-	return http.createServer(function onRequest(req, res) {
+	return http.createServer(function(req, res) {
 		// prior alterations
 		if(fn1) {
 			fn1(req, res)
 		}
 
-		logger(req, res, function onNext(err) {
+		logger(req, res, function(err) {
 			// allow req, res alterations
-			middle(req, res, function onDone() {
+			middle(req, res, function() {
 				if(err) {
 					res.statusCode = 500
 					res.end(err.message)
