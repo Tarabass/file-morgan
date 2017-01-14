@@ -111,8 +111,9 @@ fileMorgan.on('change', function(path, stats) {
 - [X] Replace Object.assign with object-assign module
 - [X] Add GitHub information to package.json
 - [X] Add tests
-- [ ] Add code coverage
+- [X] Add code coverage
 - [ ] Improve tests for default options
+- [ ] Improve code coverage
 - [X] Fire event when log file is changed
 - [X] Add npm information
 - [ ] Finish README.
