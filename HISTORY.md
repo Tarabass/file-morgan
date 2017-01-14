@@ -2,10 +2,13 @@ unreleased
 ==================
   * Added the ability to listen to events
   * Emit change event when any log file has changed
+  * Change minimum required node version to 4.0.0
   * deps: chokidar@1.6.1
     * Watch files
   * deps: events@1.1.1
     * Emit events
+  * deps: istanbul@0.4.5
+    * Code coverage
 
 1.0.4 / 2015-01-10
 ==================
