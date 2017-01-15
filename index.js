@@ -147,7 +147,9 @@ function fileMorgan(format, options) {
 			}
 			else {
 				// Create a write stream (in append mode)
-				stream = fs.createWriteStream(filePath, { flags: 'a' })
+				stream = fs.createWriteStream(filePath, {
+					flags: 'a'
+				})
 			}
 
 			// Create file watcher
@@ -156,7 +158,10 @@ function fileMorgan(format, options) {
 			}
 
 			// Merge options
-			opts = objectAssign(opts, { skip: skip, stream: stream })
+			opts = objectAssign(opts, {
+				skip: skip,
+				stream: stream
+			})
 
 			return morgan(format, opts)
 		}
@@ -195,8 +200,8 @@ function formatFileName(filePath, dateFormat) {
  * @param {String} file or directory
  */
 
-function addFileWatcher(path) {
-	var watcher = chokidar.watch(path, {
+function addFileWatcher(filePathOrDirectory) {
+	var watcher = chokidar.watch(filePathOrDirectory, {
 		alwaysStat: true
 	})
 
@@ -215,7 +220,7 @@ function addFileWatcher(path) {
  * @param {Function} listener
  */
 
-function addListener(event, listener){
+function addListener(event, listener) {
 	if(SUPPORTED_EVENTS.indexOf(event) !== -1) {
 		try {
 			EVENT_EMITTER.on(event, listener)

@@ -2,6 +2,26 @@ language: node_js
 node_js:
   - "node"
   - "6"
-  - "6.1"
-  - "5.11"
-  - "0.12"
+  - "6.0"
+  - "5"
+  - "5.0"
+  - "4"
+  - "4.0"
+sudo: false
+cache:
+  directories:
+    - node_modules
+before_install:
+  # Setup Node.js version-specific dependencies
+  - "test $TRAVIS_NODE_VERSION != '0.12' || npm rm --save-dev eslint istanbul"
+
+  # Update Node.js modules
+  - "test ! -d node_modules || npm prune"
+  - "test ! -d node_modules || npm rebuild"
+script:
+  # Run test script, depending on istanbul install
+  - "test ! -z $(npm -ps ls istanbul) || npm test"
+  - "test   -z $(npm -ps ls istanbul) || npm run-script test-travis"
+  - "test   -z $(npm -ps ls eslint  ) || npm run-script eslint"
+after_script:
+- "test -e ./coverage/lcov.info && npm install coveralls@2 && cat ./coverage/lcov.info | coveralls"

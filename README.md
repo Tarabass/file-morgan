@@ -4,6 +4,7 @@ file-morgan
 [![NPM Version][npm-image]][npm-url]
 [![NPM Downloads][downloads-image]][downloads-url]
 [![Build Status][travis-image]][travis-url]
+[![Test Coverage][coveralls-image]][coveralls-url]
 [![Join the chat at https://gitter.im/file-morgan/Lobby][gitter-image]][gitter-url]
 
 This is build upon [morgan](https://github.com/expressjs/morgan) module and saves logs to the file system
@@ -110,8 +111,9 @@ fileMorgan.on('change', function(path, stats) {
 - [X] Replace Object.assign with object-assign module
 - [X] Add GitHub information to package.json
 - [X] Add tests
-- [ ] Add code coverage
+- [X] Add code coverage
 - [ ] Improve tests for default options
+- [ ] Improve code coverage
 - [X] Fire event when log file is changed
 - [X] Add npm information
 - [ ] Finish README.
@@ -126,5 +128,7 @@ fileMorgan.on('change', function(path, stats) {
 [downloads-url]: https://npmjs.org/package/file-morgan
 [travis-image]: https://img.shields.io/travis/Tarabass/file-morgan.svg
 [travis-url]: https://travis-ci.org/Tarabass/file-morgan
+[coveralls-image]: https://img.shields.io/coveralls/Tarabass/file-morgan/master.svg
+[coveralls-url]: https://coveralls.io/r/Tarabass/file-morgan?branch=master
 [gitter-image]: https://badges.gitter.im/file-morgan/Lobby.svg
 [gitter-url]: https://gitter.im/file-morgan/Lobby?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge

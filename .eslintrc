@@ -43,7 +43,6 @@
 		"consistent-this": "error",
 		"curly": "error",
 		"default-case": "error",
-		"dot-location": "error",
 		"dot-notation": "error",
 		"eol-last": [
 			"error",
@@ -65,7 +64,6 @@
 		"guard-for-in": "error",
 		"handle-callback-err": "error",
 		"id-blacklist": "error",
-		"id-length": "error",
 		"id-match": "error",
 		"indent": "off",
 		"init-declarations": "off",
@@ -73,17 +71,16 @@
 		"key-spacing": "error",
 		"keyword-spacing": "off",
 		"line-comment-position": "error",
-		"linebreak-style": [
-			"error",
-			"windows"
-		],
 		"lines-around-comment": "error",
 		"lines-around-directive": "error",
 		"max-depth": "error",
 		"max-len": "off",
 		"max-lines": "error",
 		"max-nested-callbacks": "error",
-		"max-params": "error",
+		"max-params": [
+			"error", {
+				"max": 4
+			}],
 		"max-statements": "off",
 		"max-statements-per-line": "error",
 		"multiline-ternary": [
@@ -146,7 +143,6 @@
 		"no-octal-escape": "error",
 		"no-param-reassign": "error",
 		"no-path-concat": "error",
-		"no-plusplus": "error",
 		"no-process-env": "off",
 		"no-process-exit": "error",
 		"no-proto": "error",
@@ -161,7 +157,9 @@
 		"no-script-url": "error",
 		"no-self-compare": "error",
 		"no-sequences": "error",
-		"no-shadow": "error",
+		"no-shadow": ["error", {
+			"allow": [ "path" ]
+		}],
 		"no-shadow-restricted-names": "error",
 		"no-spaced-func": "error",
 		"no-sync": "off",
@@ -188,7 +186,9 @@
 		"no-warning-comments": "error",
 		"no-whitespace-before-property": "error",
 		"no-with": "error",
-		"object-curly-newline": "error",
+		"object-curly-newline": ["error", {
+			"minProperties": 1
+		}],
 		"object-curly-spacing": [
 			"error",
 			"always"
@@ -205,12 +205,9 @@
 		"operator-assignment": "error",
 		"operator-linebreak": "error",
 		"padded-blocks": "off",
-		"prefer-arrow-callback": "error",
 		"prefer-const": "error",
 		"prefer-numeric-literals": "error",
-		"prefer-reflect": "error",
 		"prefer-rest-params": "error",
-		"prefer-spread": "error",
 		"prefer-template": "off",
 		"quote-props": "off",
 		"quotes": [
@@ -224,10 +221,6 @@
 		"semi": "off",
 		"semi-spacing": "error",
 		"sort-imports": "error",
-		"sort-keys": [
-			"error",
-			"asc"
-		],
 		"sort-vars": "off",
 		"space-before-blocks": "error",
 		"space-before-function-paren": "off",
