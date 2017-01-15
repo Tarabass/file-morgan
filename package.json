@@ -1,6 +1,6 @@
 {
   "name": "file-morgan",
-  "version": "1.0.4",
+  "version": "1.1.0",
   "description": "Use morgan to save logs to the file system in production mode",
   "main": "index.js",
   "repository": {
