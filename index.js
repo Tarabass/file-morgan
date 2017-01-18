@@ -17,10 +17,10 @@ module.exports.compile = function(format) {
 	return morgan.compile(format)
 }
 module.exports.token = function(name, fn) {
-	return morgan.token(name, fn)
+	return morgan.token.call(this, name, fn)
 }
 module.exports.format = function(name, fmt) {
-	return morgan.format(name, fmt)
+	return morgan.format.call(this, name, fmt)
 }
 
 /**
