@@ -134,7 +134,7 @@ function fileMorgan(format, options) {
 					return res.statusCode < 400
 				}
 
-			if(useStreamRotator) {
+			if(useStreamRotator === true) {
 				filePath = formatFileName(filePath, '%DATE%')
 
 				// Create a rotating write stream
@@ -153,8 +153,8 @@ function fileMorgan(format, options) {
 			}
 
 			// Create file watcher
-			if(watchFiles) {
-				addFileWatcher(useStreamRotator ? directory : filePath)
+			if(watchFiles === true) {
+				addFileWatcher(useStreamRotator === true ? directory : filePath)
 			}
 
 			// Merge options
