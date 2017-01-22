@@ -3,6 +3,7 @@ file-morgan
 
 [![NPM Version][npm-image]][npm-url]
 [![NPM Downloads][downloads-image]][downloads-url]
+[![Dependencies][david-image]][david-url]
 [![Build Status][travis-image]][travis-url]
 [![Test Coverage][coveralls-image]][coveralls-url]
 [![Join the chat at https://gitter.im/file-morgan/Lobby][gitter-image]][gitter-url]
@@ -126,6 +127,8 @@ fileMorgan.on('change', function(path, stats) {
 [npm-url]: https://npmjs.org/package/file-morgan
 [downloads-image]: https://img.shields.io/npm/dm/file-morgan.svg
 [downloads-url]: https://npmjs.org/package/file-morgan
+[david-image]: https://img.shields.io/david/strongloop/express.svg
+[david-url]: https://david-dm.org/tarabass/file-morgan
 [travis-image]: https://img.shields.io/travis/Tarabass/file-morgan.svg
 [travis-url]: https://travis-ci.org/Tarabass/file-morgan
 [coveralls-image]: https://img.shields.io/coveralls/Tarabass/file-morgan/master.svg
