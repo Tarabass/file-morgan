@@ -55,10 +55,6 @@
 			"error",
 			"never"
 		],
-		"func-style": [
-			"error",
-			"declaration"
-		],
 		"generator-star-spacing": "error",
 		"global-require": "error",
 		"guard-for-in": "error",
@@ -75,7 +71,6 @@
 		"lines-around-directive": "error",
 		"max-depth": "error",
 		"max-len": "off",
-		"max-lines": "error",
 		"max-nested-callbacks": "error",
 		"max-params": [
 			"error", {
@@ -118,7 +113,6 @@
 		"no-implicit-globals": "error",
 		"no-implied-eval": "error",
 		"no-inline-comments": "off",
-		"no-invalid-this": "error",
 		"no-iterator": "error",
 		"no-label-var": "error",
 		"no-labels": "error",
@@ -157,9 +151,6 @@
 		"no-script-url": "error",
 		"no-self-compare": "error",
 		"no-sequences": "error",
-		"no-shadow": ["error", {
-			"allow": [ "path" ]
-		}],
 		"no-shadow-restricted-names": "error",
 		"no-spaced-func": "error",
 		"no-sync": "off",
@@ -183,7 +174,6 @@
 		"no-useless-return": "error",
 		"no-var": "off",
 		"no-void": "error",
-		"no-warning-comments": "error",
 		"no-whitespace-before-property": "error",
 		"no-with": "error",
 		"object-curly-newline": ["error", {
