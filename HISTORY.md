@@ -9,6 +9,8 @@ unreleased
     * Emit events
   * deps: istanbul@0.4.5
     * Code coverage
+  * deps: sinon@1.17.7
+      * Spies, stubs and mocks
 
 1.0.4 / 2015-01-10
 ==================
