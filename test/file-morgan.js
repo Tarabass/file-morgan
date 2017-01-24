@@ -12,12 +12,13 @@ var path = require('path')
 var fs = require('fs-extra')
 
 afterEach(function() {
-	// Remove log directory and all files in it
+	// FIXME: this let 'should listen to change event' fail
+	/*// Remove log directory and all files in it
 	fs.remove(path.resolve('logs'), function(err) {
 		if(err && err.code !== 'ENOENT') {
 			throw err
 		}
-	})
+	})*/
 })
 
 // TODO: let morgan fail and let file-morgan throw error from try - catch
