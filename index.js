@@ -13,15 +13,9 @@
 
 module.exports = fileMorgan
 module.exports.on = module.exports.addListener = addListener
-module.exports.compile = function(format) {
-	return morgan.compile(format)
-}
-module.exports.token = function(name, fn) {
-	return morgan.token.call(this, name, fn)
-}
-module.exports.format = function(name, fmt) {
-	return morgan.format.call(this, name, fmt)
-}
+module.exports.compile = compile
+module.exports.token = token
+module.exports.format = format
 
 /**
  * Module dependencies.
@@ -232,4 +226,57 @@ function addListener(event, listener) {
 	else {
 		throw new Error('Unsupported event.')
 	}
+}
+
+/**
+ * Compile a format string into a function.
+ *
+ * @param {string} format
+ * @return {function}
+ * @public
+ */
+
+function compile(format) {
+	return morgan.compile(format)
+}
+
+/**
+ * Define a token function with the given name,
+ * and callback fn(req, res).
+ *
+ * @param {string} name
+ * @param {function} fn
+ * @public
+ */
+
+function token(name, fn) {
+	if(typeof name !== 'string') {
+		throw new TypeError('argument name must be a string')
+	}
+
+	if(typeof fn !== 'function') {
+		throw new TypeError('argument fn must be a function')
+	}
+
+	return morgan.token.call(this, name, fn)
+}
+
+/**
+ * Define a format with the given name.
+ *
+ * @param {string} name
+ * @param {string|function} fmt
+ * @public
+ */
+
+function format(name, fmt) {
+	if(typeof name !== 'string') {
+		throw new TypeError('argument name must be a string')
+	}
+
+	if(typeof fmt !== 'string' && typeof fmt !== 'function') {
+		throw new TypeError('argument fmt must be a string or a function')
+	}
+
+	return morgan.format.call(this, name, fmt)
 }

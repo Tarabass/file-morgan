@@ -3,6 +3,7 @@ unreleased
   * Added the ability to listen to events
   * Emit change event when any log file has changed
   * Change minimum required node version to 4.0.0
+  * Return fileMorgan when calling format() or token()
   * deps: chokidar@1.6.1
     * Watch files
   * deps: events@1.1.1
