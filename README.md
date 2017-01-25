@@ -127,7 +127,7 @@ fileMorgan.on('change', function(path, stats) {
 [npm-url]: https://npmjs.org/package/file-morgan
 [downloads-image]: https://img.shields.io/npm/dm/file-morgan.svg
 [downloads-url]: https://npmjs.org/package/file-morgan
-[david-image]: https://img.shields.io/david/strongloop/express.svg
+[david-image]: https://img.shields.io/david/tarabass/file-morgan.svg
 [david-url]: https://david-dm.org/tarabass/file-morgan
 [travis-image]: https://img.shields.io/travis/Tarabass/file-morgan.svg
 [travis-url]: https://travis-ci.org/Tarabass/file-morgan
