@@ -8,7 +8,8 @@ file-morgan
 [![Test Coverage][coveralls-image]][coveralls-url]
 [![Join the chat at https://gitter.im/file-morgan/Lobby][gitter-image]][gitter-url]
 
-This is build upon [morgan](https://github.com/expressjs/morgan) module and saves logs to the file system
+HTTP request logger middleware for node.js
+> Log HTTP requests to the file system
 
 ## API
 
@@ -110,14 +111,15 @@ fileMorgan.on('change', function(path, stats) {
 ## To Do
 - [X] Add eslint
 - [X] Replace Object.assign with object-assign module
+- [ ] Check dependencies
 - [X] Add GitHub information to package.json
 - [X] Add tests
 - [X] Add code coverage
 - [ ] Improve tests for default options
-- [ ] Improve code coverage
+- [X] Improve code coverage
 - [X] Fire event when log file is changed
 - [X] Add npm information
-- [ ] Finish README.
+- [ ] Finish README
 - [X] Add travis
 
 ## License
