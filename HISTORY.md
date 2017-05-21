@@ -3,6 +3,7 @@ unreleased
   * Return fileMorgan when calling format() or token()
   * Improve tests and code coverage
   * Bump dependencies
+  * Added David dependencies checker to README
   * deps: sinon@2.2.0
     * Spies, stubs and mocks
 
