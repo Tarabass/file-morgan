@@ -1,4 +1,7 @@
 unreleased
+==========
+
+1.1.1 / 2017-05-21
 ==================
   * Return fileMorgan when calling format() or token()
   * Improve tests and code coverage
