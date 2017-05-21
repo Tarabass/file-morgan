@@ -125,8 +125,8 @@ function fileMorgan(format, options) {
 
 			// Default skip to requests with error code 400 or higher
 			skip = typeof opts.skip !== 'undefined' ? opts.skip : function(req, res) {
-					return res.statusCode < 400
-				}
+				return res.statusCode < 400
+			}
 
 			if(useStreamRotator === true) {
 				filePath = formatFileName(filePath, '%DATE%')
@@ -200,7 +200,7 @@ function addFileWatcher(filePathOrDirectory) {
 	})
 
 	watcher.on('change', function(path, stats) {
-		if (stats) {
+		if(stats) {
 			EVENT_EMITTER.emit('change', path, stats)
 		}
 	})
