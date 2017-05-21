@@ -41,18 +41,18 @@
     "README.md"
   ],
   "dependencies": {
-    "chokidar": "^1.6.1",
+    "chokidar": "^1.7.0",
     "events": "^1.1.1",
-    "file-stream-rotator": "0.0.7",
-    "morgan": "^1.7.0",
-    "object-assign": "^4.1.0"
+    "file-stream-rotator": "0.1.0",
+    "morgan": "^1.8.1",
+    "object-assign": "^4.1.1"
   },
   "devDependencies": {
-    "eslint": "^3.12.2",
-    "fs-extra": "^1.0.0",
+    "eslint": "^3.19.0",
+    "fs-extra": "^3.0.1",
     "istanbul": "^0.4.5",
-    "mocha": "^3.2.0",
-    "sinon": "^1.17.7",
-    "supertest": "^2.0.1"
+    "mocha": "^3.4.1",
+    "sinon": "^2.2.0",
+    "supertest": "^3.0.0"
   }
 }

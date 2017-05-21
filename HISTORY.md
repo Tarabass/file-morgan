@@ -2,7 +2,8 @@ unreleased
 ==================
   * Return fileMorgan when calling format() or token()
   * Improve tests and code coverage
-  * deps: sinon@1.17.7
+  * Bump dependencies
+  * deps: sinon@2.2.0
     * Spies, stubs and mocks
 
 1.1.0 / 2017-01-15
