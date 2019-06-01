@@ -43,7 +43,7 @@
   "dependencies": {
     "chokidar": "^3.0.0",
     "events": "^3.0.0",
-    "file-stream-rotator": "0.1.0",
+    "file-stream-rotator": "^0.4.1",
     "morgan": "^1.9.1",
     "object-assign": "^4.1.1"
   },
