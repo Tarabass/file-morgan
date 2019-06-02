@@ -1,6 +1,6 @@
 /*!
  * file-morgan
- * Copyright(c) 2017 Peter Rietveld
+ * Copyright(c) 2019 Peter Rietveld
  * MIT Licensed
  */
 
