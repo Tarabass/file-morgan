@@ -1,7 +1,9 @@
 unreleased
 ==========
+
+2.0.0 / 2019-06-03
+==================
   * Change minimum required node version to 8.6.0
-  * Update dependencies
   * Bump dependencies
 
 1.1.1 / 2017-05-21
